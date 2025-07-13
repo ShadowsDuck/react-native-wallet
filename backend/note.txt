@@ -1,0 +1,7 @@
+เชื่อมกับ <->
+
+config <-> db
+config <-> middleware
+routes <-> controller
+
+server <-> routes, middleware
