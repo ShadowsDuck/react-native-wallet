@@ -1,4 +1,4 @@
-import { pgTable, serial, text, timestamp, numeric } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, date, numeric } from "drizzle-orm/pg-core";
 
 export const transactionsTable = pgTable("transactions", {
   id: serial("id").primaryKey(),
@@ -6,5 +6,5 @@ export const transactionsTable = pgTable("transactions", {
   title: text("title").notNull(),
   amount: numeric("amount", { precision: 10, scale: 2 }).notNull(),
   category: text("category").notNull(),
-  createdAt: timestamp("created_at").defaultNow(),
+  createdAt: date("created_at").defaultNow(),
 });

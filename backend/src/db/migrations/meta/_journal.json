@@ -15,6 +15,13 @@
       "when": 1752358014040,
       "tag": "0001_parallel_multiple_man",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752440792347,
+      "tag": "0002_sudden_nekra",
+      "breakpoints": true
     }
   ]
 }
