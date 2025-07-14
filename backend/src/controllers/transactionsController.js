@@ -12,7 +12,7 @@ export async function getTransactionsByUserId(req, res) {
       .from(transactionsTable)
       .where(eq(transactionsTable.user_id, user_id))
       .orderBy(desc(transactionsTable.createdAt));
-    res.status(200).json({ transactions });
+    res.status(200).json(transactions);
   } catch (error) {
     console.log("Error getting the transactions", error);
     res.status(500).json({ message: "Internal server error" });
@@ -32,7 +32,7 @@ export async function createTransaction(req, res) {
       amount,
       category,
     });
-    res.status(201).json({ message: "Transaction created", data: transaction });
+    res.status(201).json(transaction[0]);
   } catch (error) {
     console.log("Error creating the transaction", error);
     res.status(500).json({ message: "Internal server error" });
