@@ -1,4 +1,4 @@
-import { useClerk, useUser } from "@clerk/clerk-expo";
+import { SignedIn, useClerk, useUser } from "@clerk/clerk-expo";
 import { View, Text, Button } from "react-native";
 import { useTransactions } from "../../hooks/useTransactions";
 import { useEffect } from "react";
@@ -22,6 +22,11 @@ const HomeScreen = () => {
   return (
     <View>
       <Text>HomeScreen</Text>
+      <SignedIn>
+        <Text>Balance: {summary.balance}</Text>
+        <Text>Income: {summary.income}</Text>
+        <Text>Expense: {summary.expense}</Text>
+      </SignedIn>
       <Button onPress={() => signOut()} title="logout"></Button>
     </View>
   );
